@@ -127,3 +127,6 @@ MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (MEDIA_ROOT,)
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+LOGIN_REDIRECT_URL='user_registration_success'
+AUTH_USER_MODEL = "registration.User"

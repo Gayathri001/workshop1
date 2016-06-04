@@ -26,16 +26,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#">My Web Page</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">link<span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
+
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">choose your Option<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Sign in</a></li>
                         <li><a href="#">Sign up</a></li>
@@ -51,9 +51,9 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Link</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Choose your option <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Sign in</a></li>
+                        <li><a href="{% url 'login' %}">Sign in</a></li>
                         <li><a href=" {% url 'register_user' %}">Sign up</a></li>
 
                     </ul>
@@ -63,7 +63,43 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-This is body
+<div class="row">
+  <div class="col-md-4 col-md-offset-4"><div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Login</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-md-4">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="......@gmail.com">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-md-4">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="*****">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-4">
+      <div class="checkbox">
+
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div>
+</form>
+  </div></div>
+       </div>
+
+
+
 
 </body>
 </html>
