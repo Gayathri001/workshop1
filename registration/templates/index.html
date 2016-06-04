@@ -53,9 +53,22 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Choose your option <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{% url 'login' %}">Sign in</a></li>
-                        <li><a href=" {% url 'register_user' %}">Sign up</a></li>
-
+                        {% if user.is_anonymous %}
+                        <li><a href="{% url 'register_user' %}">Sign Up</a></li>
+                        <li><a href="{% url 'login' %}">Sign In</a></li>
+                        {% else %}
+                        <li>
+                            <div class="btn-group">
+                                <li><a href="{% url 'logout' %}">Signout</a></li>
+                                <a class="btn-new btn-nav btn-white" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i>
+                                    {% if request.user.user_first_name %}
+                                    {{ request.user.user_first_name }}
+                                    {% elif request.user.username %}
+                                    {{ request.user.username }}
+                                    {% else %}
+                                    {{ request.user.email }}
+                                    {% endif %}
+                                    {% endif %}
                     </ul>
                 </li>
             </ul>
