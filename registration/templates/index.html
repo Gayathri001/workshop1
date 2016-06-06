@@ -32,13 +32,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">link<span class="sr-only">(current)</span></a></li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">choose your Option<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Sign in</a></li>
-                        <li><a href="#">Sign up</a></li>
                     </ul>
                 </li>
             </ul>
@@ -53,7 +47,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Choose your option <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        {% if user.is_anonymous %}
+                        {% if request.user.is_anonymous %}
                         <li><a href="{% url 'register_user' %}">Sign Up</a></li>
                         <li><a href="{% url 'login' %}">Sign In</a></li>
                         {% else %}
@@ -76,43 +70,15 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<div class="row">
-  <div class="col-md-4 col-md-offset-4"><div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Login</h3>
-  </div>
-  <div class="panel-body">
-    <form class="form-horizontal">
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-    <div class="col-md-4">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="......@gmail.com">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-    <div class="col-md-4">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="*****">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-4">
-      <div class="checkbox">
 
-      </div>
+ {% if request.user.is_anonymous %}
+    Sorry!!
+{% else %}
+    <div class="col-md-6 col-offset-5 " style="padding-top:5%">
+    <a href="{%  url 'add_chocolate' %}">
+    <button class="btn btn-primary">Add a choclate</button></a>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Sign in</button>
-    </div>
-  </div>
-</form>
-  </div></div>
-       </div>
-
-
-
+{% endif %}
 
 </body>
 </html>
