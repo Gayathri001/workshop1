@@ -66,8 +66,8 @@ class ChocolateDetailsView(DetailView):
 class UserProfileUpdateView(LoginRequiredMixin, CurrentUserMixin, UpdateView):
     model = User
     fields = user_fields + user_extra_fields
-    template_name= 'user_profile_update.html'
-    success_url = '/registration/user/profile/'
+    template_name = 'user_update_form.html'
+    success_url = '/registration/user/profile/edit/success/'
 
 
 
